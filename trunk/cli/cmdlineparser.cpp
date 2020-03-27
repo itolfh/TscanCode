@@ -862,6 +862,7 @@ void CmdLineParser::PrintHelp()
               "    -j <jobs>            Start [jobs] threads to do the checking simultaneously.\n"
               "    -q, --quiet          Do not show progress reports.\n"
               "    --xml                Write results in xml format to error stream (stderr).\n"
+              "    --cfg-path           use config in this path.\n"
               "\n"
               "Example usage:\n"
               "  # Recursively check the current folder. Print the progress on the screen and\n"
