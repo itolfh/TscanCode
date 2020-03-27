@@ -77,7 +77,14 @@ public:
 	{
 		return _oldcfg;
 	}
-
+	const std::string& GetCfgPath() const
+	{
+		return _cfgPath;
+	}
+	bool GetCustomCfg() const
+	{
+		return _customCfg;
+	}
     /**
      * Return if we should exit after printing version, help etc.
      */
@@ -114,8 +121,10 @@ private:
     bool _exitAfterPrint;
 
 	bool _mergecfg;
+	bool _customCfg;
 	std::string _newcfg;
 	std::string _oldcfg;
+	std::string _cfgPath;
 };
 
 /// @}

@@ -122,10 +122,13 @@ bool TscanCodeExecutor::parseFromArgs(TscanCode *tscancode, int argc, const char
 			}
 		}
 	}
-
 	//try load project custom cfg.xml
-	settings.LoadCustomCfgXml("cfg/cfg.xml", argv[0]); //suppress return warning
-
+	if (parser.GetCustomCfg()){
+		settings.LoadCustomCfgXml(parser.GetCfgPath(), argv[0]); //suppress return warning
+	}
+	else{
+		settings.LoadCustomCfgXml("cfg/cfg.xml", argv[0]); //suppress return warning
+	}
 
 	// Output a warning for the user if he tries to exclude headers
 	bool warn = false;

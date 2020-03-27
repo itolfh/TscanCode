@@ -747,6 +747,15 @@ bool CmdLineParser::ParseFromArgs(int argc, const char* const argv[])
 
 			_mergecfg = true;
 		}
+		else if (std::strncmp(argv[i], "--cfg-path",10) == 0)
+		{
+			++i;
+			if (i >= argc || argv[i][0] == '-') {
+				PrintMessage("TscanCode: argument to '--cfg-path' is missing. The correct format is --cfg-path [cfg_xml]");
+				return false;
+			}
+			_cfgPath = argv[i];
+		}
 		else if (std::strncmp(argv[i], "-e2o", 11) == 0)
 		{
 			_settings->_e2o = true;
