@@ -663,7 +663,8 @@ CCodeFile* CFileDependTable::FindShortestPath(const std::vector<CCodeFile*>& vec
 
 bool CFileDependTable::CreateFileDependTree(const std::vector<std::string> &paths, const std::vector<std::string> &includePaths, const std::vector<std::string>& excludesPaths)
 {
-	m_pRoot = new CFolder("root");
+	//m_pRoot = new CFolder("root");
+	m_pRoot = new CFolder("tsc-root");
 	std::vector<std::string>::const_iterator iterBegin = paths.begin();
 	std::vector<std::string>::const_iterator iterEnd = paths.end();
 	for (std::vector<std::string>::const_iterator iter = iterBegin; iter != iterEnd; iter++)
@@ -921,7 +922,8 @@ std::string CFileBase::GetFullPath()
 {
 	std::string sFullPath = GetName();
 	CFileBase* pFile = GetParent();
-	while (pFile && pFile->GetName() != "root")
+	//while (pFile && pFile->GetName() != "root")
+	while (pFile && pFile->GetName() != "tsc-root")
 	{
 		sFullPath = pFile->GetName() + "/" + sFullPath;
 		pFile = pFile->GetParent();

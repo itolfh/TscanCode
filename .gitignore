@@ -19,3 +19,12 @@
 trunk/tscancode.xcodeproj/project.xcworkspace
 trunk/tscancode.xcodeproj/xcuserdata
 *.o
+tsc.IAB
+tsc.IAD
+tsc.IMB
+tsc.IMD
+tsc.PFI
+tsc.PO
+tsc.PR
+tsc.PRI
+tsc.PS
